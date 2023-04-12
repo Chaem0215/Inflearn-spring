@@ -16,6 +16,8 @@ import org.springframework.context.annotation.Configuration;
 // 실제 동작에 필요한 구현객체를 AppConfig에서 생성한다.
 @Configuration // App의 구성정보를 담당한다는 설정 정보
 public class AppConfig {
+// 팩토리 메서드를 통해 등록하는 방식이다.
+    // 팩토리 빈을 통해 적용되는 방식
 
     @Bean // 각 메서드에 적어줌 // 그럼 스프링 컨테이너에 등록이 된다.
     public MemberService memberService (){
