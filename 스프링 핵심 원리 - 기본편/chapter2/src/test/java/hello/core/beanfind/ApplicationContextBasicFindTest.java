@@ -43,7 +43,8 @@ public class ApplicationContextBasicFindTest {
     @DisplayName("빈 이름으로 조회 X")
     void findBeanByNameX(){
         // c.getBean("xxxxxx", MemberService.class);
-        MemberService xxxxxx = ac.getBean("xxxxx", MemberService.class);
+        MemberService xxxxxx = ac.getBean("memberService", MemberService.class);
+        //emberService xxxxxx = ac.getBean("xxxxx", MemberService.class);
         assertThrows(NoSuchBeanDefinitionException.class,
                 ()-> ac.getBean("xxxxx", MemberService.class)); // getBean의 로직을 실행하면 예외가 터져야 성공이다.
         // NoSuchBeanDefinitionException << 이 예외가 터져야된다는 뜻, 터져야 성공

@@ -21,16 +21,19 @@ public class AppConfig {
 
     @Bean // 각 메서드에 적어줌 // 그럼 스프링 컨테이너에 등록이 된다.
     public MemberService memberService (){
+        System.out.println("call AppConfig.memberService");
         return  new MemberServiceImpl(memberRepository()); // 생성자 주입
         // memberServiceImpl이고 memoryMemberRepo를 사용할 거라는 것.
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
     public OrderService orderService(){
+        System.out.println("all AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
