@@ -26,8 +26,8 @@ import org.springframework.context.annotation.FilterType;
         excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 ) //  @ComponentScan.Filter 에서 설정한 애들은 컴포넌트 스캔에서 제외 >> Configuration 이 애노테이션이 붙은 애들은 뺄것임 (수동등록)
 public class AutoAppConfig {
-    @Bean(name = "memoryMemberRepository")
-    MemberRepository memberRepository(){
-        return new MemoryMemberRepository();
-    }
+    //@Bean(name = "memoryMemberRepository")
+    //MemberRepository memberRepository(){
+    //    return new MemoryMemberRepository();
+    //}
 }
