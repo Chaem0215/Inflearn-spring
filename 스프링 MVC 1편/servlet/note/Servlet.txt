@@ -1,0 +1,20 @@
+ㅁ 서블릿 정리
+
+HttpServletRequest 스펙을 편리하게 사용, 조회할 수 있도록 함
+
+클라이언트와 서버 간의 메시지 주고 받는건 3가지 방법
+1. GET - "쿼리 파라미터"
+ - /url?username=hello&age=20
+ - 메시지 바디 없이 URL의 쿼리 파라미터에 데이터 포함하여 전달
+ - 검색, 필터, 페이징 등에서 주로 사용
+2. POST - HTML Form
+ - content-type: application/x-www-form-urlencoded
+ - 메시지 바디에 쿼리 파라미터 형식으로 전달
+ - html form 에서 입력하면 웹 브라우져가 쿼리 파라미터 형식으로 HTTP 메시지를 보낸다.
+ - 회원 가입, 상품 주문, HTML Form 사용
+3. HTTP message body 에 직접 데이터 담아 요청
+ - HTTP API 에서 주로 사용, JSON, XML, TEXT
+ - 데이터 형식 주로 JSON
+ - form data 를 body 에 전송할 때 PUSH 방식만 허용함.
+
+ ㅁ 서블릿, JSP, MVC 패턴

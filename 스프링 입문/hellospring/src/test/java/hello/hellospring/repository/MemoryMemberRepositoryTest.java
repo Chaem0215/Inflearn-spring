@@ -14,10 +14,10 @@ public class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
     @AfterEach
-    public void afterEach(){
+    public void afterEach(){ // test 끝날때마다 repository 지워주는 부분 // 메서드가 끝날때마다 호출
         repository.clearStore();
     }
-    @Test
+    @Test //
     public void save(){
         Member member = new Member();
         member.setName("spring");
@@ -38,8 +38,8 @@ public class MemoryMemberRepositoryTest {
         member2.setName("spring2");
         repository.save(member2);
 
-        Member result = repository.findByName("spring1").get();
-
+        Member result = repository.findByName("spring1").get(); // save 한거 들어갔나 검증하는 부분,
+        //Opational로 바로 꺼내면 안좋음
         assertThat(result).isEqualTo(member1);
     }
 

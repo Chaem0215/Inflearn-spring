@@ -43,17 +43,24 @@ class MemberServiceTest {
 
     @Test
     public void 중복_회원_예외(){
-        //given
-        Member member1 = new Member();
-        member1.setName("spring");
+        long start = System.currentTimeMillis();
 
-        Member member2 = new Member();
-        member2.setName("spring");
+        try {
+            //given
+            Member member1 = new Member();
+            member1.setName("spring");
 
-        //when
-        memberService.join(member1);
-        assertThrows(IllegalStateException.class, () -> memberService.join(member2)); // 예외가 터져야할 때
+            Member member2 = new Member();
+            member2.setName("spring");
 
+            //when
+            memberService.join(member1);
+            assertThrows(IllegalStateException.class, () -> memberService.join(member2)); // 예외가 터져야할 때
+        }finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("find_equal_member_ex = " + timeMs + "ms");
+        }
         /*
         try{
             memberService.join(member2);
